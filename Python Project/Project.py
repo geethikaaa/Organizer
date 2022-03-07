@@ -230,7 +230,10 @@ def update_entry(option):
             Label(NewWin, text="No assignment is found", font="Arial 10").grid(row=3, columnspan=10)
             messagebox.showwarning("Error", "No Assignment is found")
 
-    Button(NewWin, text="Delete", command=lambda: update(sub_code.get(), lab_no.get(), option)).grid(row=1, column=6)
+    if option==0 :
+        Button(NewWin, text="Update", command=lambda: update(sub_code.get(), lab_no.get(), option)).grid(row=1, column=6)
+    else :
+        Button(NewWin, text="Delete", command=lambda: update(sub_code.get(), lab_no.get(), option)).grid(row=1, column=6)
 
 
 root.config(bg="white")
